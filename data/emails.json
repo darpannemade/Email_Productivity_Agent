@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "sender": "manager@company.com",
+    "subject": "Project status update required",
+    "timestamp": "2025-11-18T10:30:00",
+    "body": "Hi, please send me the latest project status report by Friday EOD. Include risks and blockers."
+  },
+  {
+    "id": 2,
+    "sender": "newsletter@technews.com",
+    "subject": "This week in AI and cybersecurity",
+    "timestamp": "2025-11-17T08:15:00",
+    "body": "Here are the top stories in AI and cybersecurity this week..."
+  },
+  {
+    "id": 3,
+    "sender": "hr@company.com",
+    "subject": "Interview schedule confirmation",
+    "timestamp": "2025-11-16T14:45:00",
+    "body": "We would like to schedule your interview on Thursday at 3 PM. Please confirm your availability."
+  },
+  {
+    "id": 4,
+    "sender": "spam@random-offers.com",
+    "subject": "You won a free iPhone!!!",
+    "timestamp": "2025-11-15T09:00:00",
+    "body": "Click here to claim your free iPhone now. Limited time only!"
+  },
+  {
+    "id": 5,
+    "sender": "colleague@company.com",
+    "subject": "Action items from yesterday's meeting",
+    "timestamp": "2025-11-14T17:20:00",
+    "body": "As discussed, please prepare the security risk register, review the vendor assessments, and finalize the training plan by next Wednesday."
+  }
+]

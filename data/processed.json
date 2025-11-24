@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "sender": "manager@company.com",
+    "subject": "Project status update required",
+    "category_raw": "{\"category\": \"To-Do\"}",
+    "actions_raw": "[\n  {\n    \"task\": \"Send me the latest project status report\",\n    \"deadline\": \"2022-02-25T23:59:00+0000\",\n    \"priority\": \"High\"\n  }\n]"
+  },
+  {
+    "id": 2,
+    "sender": "newsletter@technews.com",
+    "subject": "This week in AI and cybersecurity",
+    "category_raw": "{\"category\": \"Newsletter\"}",
+    "actions_raw": "[]"
+  },
+  {
+    "id": 3,
+    "sender": "hr@company.com",
+    "subject": "Interview schedule confirmation",
+    "category_raw": "{\"category\": \"To-Do\"}",
+    "actions_raw": "[]"
+  },
+  {
+    "id": 4,
+    "sender": "spam@random-offers.com",
+    "subject": "You won a free iPhone!!!",
+    "category_raw": "{\"category\": \"Spam\"}",
+    "actions_raw": "[]"
+  },
+  {
+    "id": 5,
+    "sender": "colleague@company.com",
+    "subject": "Action items from yesterday's meeting",
+    "category_raw": "{\"category\": \"To-Do\"}",
+    "actions_raw": "[\n  {\n    \"task\": \"prepare the security risk register\",\n    \"deadline\": \"2023-07-12T00:00:00.000Z\",\n    \"priority\": \"High\"\n  },\n  {\n    \"task\": \"review the vendor assessments\",\n    \"deadline\": \"2023-07-12T00:00:00.000Z\",\n    \"priority\": \"High\"\n  },\n  {\n    \"task\": \"finalize the training plan\",\n    \"deadline\": \"2023-07-12T00:00:00.000Z\",\n    \"priority\": \"High\"\n  }\n]"
+  }
+]

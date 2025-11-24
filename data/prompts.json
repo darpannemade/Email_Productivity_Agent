@@ -1,0 +1,7 @@
+{
+  "categorization_prompt": "You are an email classification model.Your output MUST be valid JSON only, with no explanations, no comments, and no extra text.If the email contains a user action request, classify it as 'To-Do'.Else choose from: Important, Newsletter, Spam.Return exactly this JSON format:{\"category\": \"<one-word-category>\"}DO NOT write anything outside the JSON.",
+  "action_item_prompt": "You extract tasks from emails.Your output MUST be valid JSON only.NO comments, NO natural language, NO explanations.If no task is present, return [].Return ONLY a JSON array of objects like:[  {    \"task\": \"<task-description>\",    \"deadline\": \"<YYYY-MM-DD or null>\",    \"priority\": \"High|Medium|Low\"  }]Write nothing except the JSON.",
+  "auto_reply_prompt": "You are an email reply drafting assistant. Based on the email and the user's tone preference, generate a polite, concise reply. If the email is a meeting request, ask for agenda and confirm availability. If it's a task request, acknowledge and confirm when it will be done. Always keep replies professional, clear, and under 150 words.",
+  "summarization_prompt": "Summarize this email in 2-3 sentences highlighting the main purpose, any deadlines, and required actions.",
+  "urgent_filter_prompt": "Given a list of emails with their categories and action items, identify which ones are 'urgent' based on deadlines within 3 days or explicit urgency words like 'ASAP', 'urgent', 'immediately'. Return a JSON list of email IDs that are urgent."
+}
