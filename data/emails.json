@@ -3,35 +3,140 @@
     "id": 1,
     "sender": "manager@company.com",
     "subject": "Project status update required",
-    "timestamp": "2025-11-18T10:30:00",
-    "body": "Hi, please send me the latest project status report by Friday EOD. Include risks and blockers."
+    "timestamp": "2025-02-03 09:45:00",
+    "body": "Hi team, please send me the updated project status report by Friday EOD. Make sure to highlight pending risks and blockers."
   },
   {
     "id": 2,
-    "sender": "newsletter@technews.com",
-    "subject": "This week in AI and cybersecurity",
-    "timestamp": "2025-11-17T08:15:00",
-    "body": "Here are the top stories in AI and cybersecurity this week..."
+    "sender": "hr@company.com",
+    "subject": "Interview schedule confirmation",
+    "timestamp": "2025-02-02 11:10:00",
+    "body": "Dear candidate, kindly confirm whether you are available for the interview slot on Wednesday at 3 PM."
   },
   {
     "id": 3,
-    "sender": "hr@company.com",
-    "subject": "Interview schedule confirmation",
-    "timestamp": "2025-11-16T14:45:00",
-    "body": "We would like to schedule your interview on Thursday at 3 PM. Please confirm your availability."
+    "sender": "newsletter@techdigest.com",
+    "subject": "This week in AI & cybersecurity",
+    "timestamp": "2025-02-01 07:30:00",
+    "body": "Welcome to your weekly digest! Here's what's happening in AI, ML, and cybersecurity across the globe."
   },
   {
     "id": 4,
-    "sender": "spam@random-offers.com",
-    "subject": "You won a free iPhone!!!",
-    "timestamp": "2025-11-15T09:00:00",
-    "body": "Click here to claim your free iPhone now. Limited time only!"
+    "sender": "alerts@server.com",
+    "subject": "Server CPU usage exceeded threshold",
+    "timestamp": "2025-02-03 02:18:00",
+    "body": "Warning: CPU usage on server-23 has crossed 90%. Immediate investigation is recommended."
   },
   {
     "id": 5,
     "sender": "colleague@company.com",
     "subject": "Action items from yesterday's meeting",
-    "timestamp": "2025-11-14T17:20:00",
-    "body": "As discussed, please prepare the security risk register, review the vendor assessments, and finalize the training plan by next Wednesday."
+    "timestamp": "2025-02-02 17:40:00",
+    "body": "Here are the action items: 1) Prepare compliance audit checklist. 2) Update the vendor security assessment sheet. 3) Finalize onboarding plan for new team members."
+  },
+  {
+    "id": 6,
+    "sender": "finance@company.com",
+    "subject": "Reimbursement documents pending",
+    "timestamp": "2025-02-01 14:22:00",
+    "body": "Your reimbursement for the January expenses is pending due to missing receipts. Kindly upload them by Thursday."
+  },
+  {
+    "id": 7,
+    "sender": "security@company.com",
+    "subject": "Password expiry notice",
+    "timestamp": "2025-02-03 08:00:00",
+    "body": "Your password will expire in 3 days. Please reset it using the company portal to avoid any login issues."
+  },
+  {
+    "id": 8,
+    "sender": "training@company.com",
+    "subject": "Mandatory cybersecurity awareness training",
+    "timestamp": "2025-01-31 10:00:00",
+    "body": "You are required to complete the cybersecurity training module by this weekend. The training link has been shared earlier."
+  },
+  {
+    "id": 9,
+    "sender": "spam@fake-offers.com",
+    "subject": "Congratulations! You won a free iPhone!",
+    "timestamp": "2025-02-03 06:45:00",
+    "body": "Click this suspicious link to claim your free iPhone! Offer valid only for the next 2 minutes!"
+  },
+  {
+    "id": 10,
+    "sender": "marketing@shopnow.com",
+    "subject": "Biggest sale of the year — flat 60% off",
+    "timestamp": "2025-02-01 09:00:00",
+    "body": "Dear customer, our annual mega sale is now live! Grab electronics, clothing, and accessories at unbelievable prices."
+  },
+  {
+    "id": 11,
+    "sender": "it-support@company.com",
+    "subject": "Laptop upgrade request approved",
+    "timestamp": "2025-02-03 12:30:00",
+    "body": "Your request for laptop upgrade has been approved. Please visit the IT desk tomorrow between 10 AM – 1 PM to collect your new device."
+  },
+  {
+    "id": 12,
+    "sender": "ceo.office@company.com",
+    "subject": "Town hall meeting on Monday",
+    "timestamp": "2025-02-02 16:15:00",
+    "body": "The CEO will be hosting the monthly town hall meeting next Monday at 11 AM. Attendance is mandatory for all employees."
+  },
+  {
+    "id": 13,
+    "sender": "events@company.com",
+    "subject": "Annual team outing – RSVP required",
+    "timestamp": "2025-02-03 09:00:00",
+    "body": "We are planning our annual team outing for next month. Please RSVP by filling the linked form before Friday."
+  },
+  {
+    "id": 14,
+    "sender": "compliance@company.com",
+    "subject": "Urgent: Policy document review pending",
+    "timestamp": "2025-02-02 13:45:00",
+    "body": "Please review the updated data protection policy and submit your acknowledgment before the deadline."
+  },
+  {
+    "id": 15,
+    "sender": "teammate@company.com",
+    "subject": "Need your input on the report",
+    "timestamp": "2025-02-03 10:05:00",
+    "body": "Can you share your comments on the draft report? I need to finalize it by afternoon."
+  },
+  {
+    "id": 16,
+    "sender": "support@banking.com",
+    "subject": "Your monthly statement is ready",
+    "timestamp": "2025-02-01 08:10:00",
+    "body": "Your bank account statement for January is now available. Login to your portal to download it securely."
+  },
+  {
+    "id": 17,
+    "sender": "notifications@github.com",
+    "subject": "New login detected",
+    "timestamp": "2025-02-03 11:00:00",
+    "body": "A new login to your GitHub account was detected from a Windows device. If this wasn’t you, please secure your account immediately."
+  },
+  {
+    "id": 18,
+    "sender": "admin@university.com",
+    "subject": "Assignment submission deadline extended",
+    "timestamp": "2025-02-01 17:55:00",
+    "body": "The deadline for your assignment submission has been extended to next Tuesday due to technical issues on the portal."
+  },
+  {
+    "id": 19,
+    "sender": "colleague2@company.com",
+    "subject": "Please share access to drive folder",
+    "timestamp": "2025-02-02 15:20:00",
+    "body": "Can you grant me access to the shared drive folder for the design documents? I need to upload updated diagrams."
+  },
+  {
+    "id": 20,
+    "sender": "wellness@company.com",
+    "subject": "Employee wellness survey",
+    "timestamp": "2025-02-03 07:55:00",
+    "body": "We request you to participate in the quarterly wellness survey. Your feedback helps us improve employee initiatives."
   }
 ]
