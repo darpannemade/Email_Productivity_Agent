@@ -3,7 +3,7 @@
 import os
 import requests
 
-# You can override this via env var if needed
+
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 MODEL_NAME = os.getenv("OLLAMA_MODEL", "llama3")
 
@@ -25,7 +25,7 @@ def _call_ollama(prompt: str) -> str:
         data = resp.json()
         return data.get("response", "").strip()
     except Exception as e:
-        # Basic fallback: return error message so UI can show it
+        
         return f"[LLM ERROR] {e}"
 
 
@@ -37,9 +37,7 @@ def run_llm(system_prompt: str, user_instruction: str) -> str:
     return _call_ollama(full_prompt)
 
 
-# -----------------------------
-# Email-specific helper methods
-# -----------------------------
+
 
 def categorize_email(email_text: str, categorization_prompt: str) -> str:
     """
