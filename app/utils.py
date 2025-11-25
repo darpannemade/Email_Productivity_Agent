@@ -11,13 +11,12 @@ def extract_json_object(text: str):
     if not text:
         return None
 
-    # If it's already clean JSON, try directly
     try:
         return json.loads(text)
     except Exception:
         pass
 
-    # Try to extract the first {...} block
+
     match = re.search(r"\{.*\}", text, re.DOTALL)
     if match:
         candidate = match.group(0)
@@ -37,7 +36,6 @@ def extract_json_array(text: str):
     if not text:
         return []
 
-    # Direct parse
     try:
         data = json.loads(text)
         if isinstance(data, list):
@@ -45,7 +43,7 @@ def extract_json_array(text: str):
     except Exception:
         pass
 
-    # Try array pattern
+
     match = re.search(r"\[.*\]", text, re.DOTALL)
     if match:
         candidate = match.group(0)
