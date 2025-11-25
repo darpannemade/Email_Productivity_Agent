@@ -130,8 +130,7 @@ Email_Productivity_Agent/
 │
 ├── README.md
 ├── requirements.txt
-├── .gitignore
-└── LICENSE (optional)
+
 ```
 
 
