@@ -3,7 +3,7 @@
 import os
 import requests
 
-# Configure these via environment variables or hardcode for local demo
+
 N8N_BASE_URL = os.getenv("N8N_BASE_URL", "http://localhost:5678")
 TASKS_WEBHOOK_PATH = os.getenv("N8N_TASKS_WEBHOOK_PATH", "/webhook-test/email-agent-tasks")
 DRAFT_WEBHOOK_PATH = os.getenv("N8N_DRAFT_WEBHOOK_PATH", "/webhook-test/email-agent-send-draft")
