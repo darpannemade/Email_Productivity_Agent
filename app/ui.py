@@ -151,7 +151,7 @@ def setup_page():
         unsafe_allow_html=True,
     )
 
-    # JS (sidebar header animation – may be ignored by some Streamlit versions, but safe)
+   
     st.markdown(
         """
         <script>
@@ -254,7 +254,7 @@ def main():
 
 
 
-# ---------------------- PAGE RENDERERS ----------------------
+
 
 
 def render_overview(emails):
@@ -332,7 +332,7 @@ def render_global_inbox_agent():
         st.warning("No processed data found. Please run 'Process Inbox' first.")
         return
 
-    # Build a compact knowledge base string
+    
     kb_lines = []
     for item in processed:
         email_id = item["id"]
@@ -374,23 +374,23 @@ def render_global_inbox_agent():
     if "global_chat_history" not in st.session_state:
         st.session_state.global_chat_history = []
 
-    # 1. Show existing messages
+    
     for msg in st.session_state.global_chat_history:
         st.chat_message(msg["role"]).write(msg["content"])
 
-    # 2. Take new input
+   
     user_query = st.chat_input("Ask something about your entire inbox...")
 
     if user_query:
-        # 2a. Save user message
+      
         st.session_state.global_chat_history.append(
             {"role": "user", "content": user_query}
         )
 
-        # 2b. Show user message immediately
+       
         st.chat_message("user").write(user_query)
 
-        # 2c. Prepare prompts
+       
         system_prompt = (
             "You are an assistant that analyzes an inbox knowledge base. "
             "You receive a structured summary of emails, categories, and tasks, and you must "
@@ -403,7 +403,7 @@ def render_global_inbox_agent():
             f"User question: {user_query}"
         )
 
-        # 2d. Assistant bubble with spinner
+        
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
                 response = run_llm(system_prompt, user_instruction)
@@ -426,7 +426,7 @@ def render_inbox(emails):
         st.info("No emails found in the mock inbox.")
         return
 
-    # Build category map from processed data
+    
     processed = load_processed()
     category_map = {}
     for item in processed:
@@ -475,7 +475,7 @@ def render_inbox(emails):
     st.write("---")
     st.markdown("#### 📬 Emails")
 
-    # Simple filter by sender
+  
     senders = ["All"] + sorted(list(set(e["sender"] for e in emails)))
     selected_sender = st.selectbox("Filter by sender", senders)
 
@@ -486,7 +486,7 @@ def render_inbox(emails):
         email_id = email["id"]
         category = category_map.get(email_id)
 
-        # Decide badge class
+        
         if not category:
             badge_class = "category-unknown"
             cat_label = "Uncategorized"
@@ -583,19 +583,19 @@ def render_email_chat(emails):
 
     from llm_agent import chat_with_email
 
-    # Email selection
+    
     email_subjects = {email["subject"]: email for email in emails}
     selected_subject = st.selectbox("Select an email to chat with:", list(email_subjects.keys()))
     selected_email = email_subjects[selected_subject]
     email_id = selected_email["id"]
 
-    # Manage per-email chat history
+    
     if "last_selected_email_id" not in st.session_state:
         st.session_state.last_selected_email_id = email_id
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
-    # If user changed email, reset history for the new one
+   
     if st.session_state.last_selected_email_id != email_id:
         st.session_state.chat_history = []
         st.session_state.last_selected_email_id = email_id
@@ -606,28 +606,28 @@ def render_email_chat(emails):
     st.write("---")
     st.markdown("#### 💬 Conversation")
 
-    # 1. Show existing history
+  
     for msg in st.session_state.chat_history:
         st.chat_message(msg["role"]).write(msg["content"])
 
-    # 2. Take new user message
+   
     user_query = st.chat_input("Ask something about this email...")
 
     if user_query:
-        # 2a. Add user message to history
+       
         st.session_state.chat_history.append({"role": "user", "content": user_query})
 
-        # 2b. Show user message immediately
+        
         st.chat_message("user").write(user_query)
 
-        # 2c. Prepare prompt
+       
         custom_prompt = (
             "You are an intelligent email assistant. "
             "You analyze the email and answer user questions truthfully, concisely, "
             "and in simple language that a busy professional can understand."
         )
 
-        # 2d. Show assistant bubble with spinner while thinking
+       
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
                 agent_response = chat_with_email(
@@ -636,12 +636,12 @@ def render_email_chat(emails):
                     user_query=user_query,
                 )
 
-                # Save assistant reply
+               
                 st.session_state.chat_history.append(
                     {"role": "assistant", "content": agent_response}
                 )
 
-                # Show reply
+                
                 st.write(agent_response)
 
 
@@ -660,7 +660,7 @@ def render_reply_drafts(emails):
 
     col_left, col_right = st.columns([2, 2])
 
-    # ---------- LEFT: Generate / Edit current draft ----------
+    
     with col_left:
         st.markdown("#### 🧾 Generate a Reply Draft")
 
@@ -690,7 +690,7 @@ def render_reply_drafts(emails):
                     tone=tone,
                 )
 
-                # Try to parse JSON structure (subject, body, suggested_followups, metadata)
+               
                 parsed = extract_json_object(raw_reply)
 
                 if isinstance(parsed, dict) and ("body" in parsed or "subject" in parsed):
@@ -741,7 +741,7 @@ def render_reply_drafts(emails):
                     del st.session_state.current_draft
                     st.info("Current in-memory draft cleared. Saved drafts are still preserved.")
 
-    # ---------- RIGHT: Saved drafts + delete + send ----------
+  
     with col_right:
         st.markdown("#### 📂 Saved Drafts")
 
@@ -749,7 +749,7 @@ def render_reply_drafts(emails):
         if not drafts:
             st.info("No drafts saved yet.")
         else:
-            # --- Confirmation state for deleting ALL drafts ---
+           
             if "confirm_delete_all_drafts" not in st.session_state:
                 st.session_state.confirm_delete_all_drafts = False
 
@@ -770,7 +770,7 @@ def render_reply_drafts(emails):
                 if st.button("🧨 Delete ALL saved drafts"):
                     st.session_state.confirm_delete_all_drafts = True
 
-            # --- Individual drafts list ---
+          
             for i, d in enumerate(drafts, start=1):
                 with st.expander(f"Draft {i}: {d['subject']} → {d['to']}"):
                     st.markdown(f"**To:** {d['to']}")
@@ -778,7 +778,7 @@ def render_reply_drafts(emails):
                     st.markdown("**Body:**")
                     st.write(d["body"])
 
-                    # Optional extras
+                 
                     followups = d.get("suggested_followups") or []
                     metadata = d.get("metadata") or {}
 
@@ -925,7 +925,7 @@ def render_tasks_insights():
     else:
         st.info("No urgent tasks detected based on current rules.")
 
-    # Optional: Integrate with n8n from here
+
     from n8n_client import send_tasks_to_n8n
 
     if tasks and st.button("📤 Export all tasks to n8n"):
