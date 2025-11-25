@@ -30,7 +30,7 @@ def process_inbox():
             "id": email["id"],
             "sender": email["sender"],
             "subject": email["subject"],
-            # These are raw strings (likely JSON) returned by the model
+          
             "category_raw": category_output,
             "actions_raw": actions_output,
         })
