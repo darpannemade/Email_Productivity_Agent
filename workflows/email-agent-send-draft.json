@@ -1,0 +1,95 @@
+{
+  "name": "email-agent-send-draft",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "email-agent-send-draft",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5de7eba6-8826-4255-bd2e-2b2e1f33dd1a",
+      "name": "Webhook",
+      "webhookId": "5f0f111a-c9b6-4f11-b2fa-917ab9271c12"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{$json[\"body\"][\"to\"]}}",
+        "subject": "={{$json[\"body\"][\"subject\"]}}",
+        "message": "={{$json[\"body\"][\"body\"]}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "746e8bcb-12d2-41fe-af7b-571a1ce35b0a",
+      "name": "Send a message",
+      "webhookId": "c5d33995-25ba-46a3-b47b-4b554944346e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "TgfEdr6H74Lp9n01",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{ \"status\": \"draft_received\", \"to\": \"client@example.com\" }\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "a18b8343-2a68-4b08-be0b-a6987571d7d6",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7eb31f9c-86b5-4e9e-974a-033f7cc57791",
+  "meta": {
+    "instanceId": "8a82b84e89f1077f182925eb65ae07d8983bad08c35a815f3019ea5c08d5f0b5"
+  },
+  "id": "YHuqOm8yHxxH3jAJ",
+  "tags": []
+}
